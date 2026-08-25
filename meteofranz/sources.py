@@ -132,6 +132,37 @@ def _child_by_local_name(element: ET.Element, *names: str) -> ET.Element | None:
     )
 
 
+def _descendants_by_local_name(element: ET.Element, *names: str) -> list[ET.Element]:
+    """Trova anche campi namespaced/nidificati usati dai feed social di RSS.app."""
+    wanted = set(names)
+    return [
+        child
+        for child in element.iter()
+        if child is not element and child.tag.rsplit("}", 1)[-1] in wanted
+    ]
+
+
+def _social_item_text(item: ET.Element) -> str:
+    """Estrae prima la caption, poi usa il titolo soltanto come riserva."""
+    parts: list[str] = []
+    for field in ("description", "encoded", "content", "summary"):
+        for element in _descendants_by_local_name(item, field):
+            value = _strip_markup(_xml_text(element))
+            if value and value.casefold() not in {part.casefold() for part in parts}:
+                parts.append(value)
+    if parts:
+        return max(parts, key=len)
+    return _xml_text(_child_by_local_name(item, "title"))
+
+
+def _social_item_link(item: ET.Element, fallback_url: str) -> str:
+    link_element = _child_by_local_name(item, "link")
+    link = _xml_text(link_element) if link_element is not None else ""
+    if link_element is not None and not link:
+        link = sanitize(link_element.attrib.get("href", ""))
+    return link if link.startswith("http") else fallback_url
+
+
 def _parse_feed_time(value: str) -> datetime | None:
     if not value:
         return None
@@ -249,6 +280,7 @@ def _fetch_recent_social_rss(
     fallback_url: str,
     now: datetime | None = None,
     max_chars: int = 1200,
+    max_items: int = 1,
 ) -> SourceNote:
     try:
         root = ET.fromstring(_fetch(feed_url))
@@ -272,24 +304,33 @@ def _fetch_recent_social_rss(
         if not candidates:
             raise ValueError("Feed RSS privo di date verificabili")
 
-        published_at, item, published = max(candidates, key=lambda candidate: candidate[0])
         current = (now or datetime.now(ROME)).astimezone(ROME)
-        if current - published_at > timedelta(hours=48):
+        recent = [
+            candidate
+            for candidate in sorted(candidates, key=lambda candidate: candidate[0], reverse=True)
+            if current - candidate[0] <= timedelta(hours=48)
+        ]
+        if not recent:
             raise ValueError("Ultimo post più vecchio di 48 ore")
 
-        title = _xml_text(_child_by_local_name(item, "title"))
-        content_element = _child_by_local_name(item, "description", "encoded", "content", "summary")
-        content = _strip_markup(_xml_text(content_element))
-        text = content or title
-        if len(text) < 25:
+        selected: list[tuple[datetime, ET.Element, str, str]] = []
+        seen: set[str] = set()
+        for published_at, item, published in recent:
+            caption = _social_item_text(item)
+            normalized = caption.casefold()
+            if len(caption) < 25 or normalized in seen:
+                continue
+            seen.add(normalized)
+            selected.append((published_at, item, published, caption))
+            if len(selected) >= max_items:
+                break
+        if not selected:
             raise ValueError("Post privo di testo meteorologico verificabile")
 
-        link_element = _child_by_local_name(item, "link")
-        link = _xml_text(link_element) if link_element is not None else ""
-        if link_element is not None and not link:
-            link = sanitize(link_element.attrib.get("href", ""))
-        if not link.startswith("http"):
-            link = fallback_url
+        _, newest_item, published, _ = selected[0]
+        title = _xml_text(_child_by_local_name(newest_item, "title"))
+        link = _social_item_link(newest_item, fallback_url)
+        text = "\n\n".join(item[3] for item in selected)
 
         return SourceNote(
             name=name,
@@ -309,13 +350,14 @@ def _fetch_recent_social_rss(
 
 
 def fetch_ross_pacher(now: datetime | None = None) -> SourceNote:
-    """Usa il feed RSS concordato; Telegram resta una riserva."""
+    """Legge fino a tre aggiornamenti RSS recenti; Telegram resta una riserva."""
     source = _fetch_recent_social_rss(
         name="Meteo Rosspach",
         feed_url=ROSS_PACHER_RSS_URL,
         fallback_url=ROSS_PACHER_PUBLIC_URL,
         now=now,
-        max_chars=1200,
+        max_chars=2400,
+        max_items=3,
     )
     if source.available:
         return source
@@ -324,13 +366,14 @@ def fetch_ross_pacher(now: datetime | None = None) -> SourceNote:
 
 
 def fetch_poletti_rss(now: datetime | None = None) -> SourceNote:
-    """Legge il feed RSS.app concordato e usa soltanto contributi recenti."""
+    """Legge le caption dei post recenti dal feed RSS.app concordato."""
     return _fetch_recent_social_rss(
         name="Giacomo Poletti",
         feed_url=POLETTI_RSS_URL,
         fallback_url=POLETTI_INSTAGRAM_URL,
         now=now,
-        max_chars=1200,
+        max_chars=2400,
+        max_items=3,
     )
 
 

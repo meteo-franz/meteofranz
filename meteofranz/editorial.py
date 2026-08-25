@@ -197,6 +197,7 @@ def _expert_sentence(sources: list[SourceNote]) -> str:
     experts = [source for source in sources[2:] if source.available]
     if not experts:
         return ""
+    expert_names = " e ".join(source.name for source in experts)
     official_signals = _signals(
         " ".join(f"{source.title} {source.text}" for source in sources[:2] if source.available)
     )
@@ -207,15 +208,75 @@ def _expert_sentence(sources: list[SourceNote]) -> str:
     shared = next((signal for signal in priorities if signal in official_signals & expert_signals), "")
     if shared:
         label = "precipitazioni" if shared == "pioggia" else shared
-        return f"Il contributo esperto pubblico disponibile è coerente sul segnale di {label}."
+        return f"I contributi recenti di {expert_names} sono coerenti sul segnale di {label}."
     added = next((signal for signal in priorities if signal in expert_signals), "")
     if added:
         label = "precipitazioni" if added == "pioggia" else added
         return (
-            f"Un contributo esperto pubblico aggiunge un possibile segnale di {label}, "
+            f"Il contributo recente di {expert_names} aggiunge un possibile segnale di {label}, "
             "mantenuto come indicazione secondaria finché non trova conferma ufficiale."
         )
     return ""
+
+
+def _caption_focus(text: str, max_words: int = 24) -> str:
+    """Seleziona un passaggio breve della caption, privilegiando contenuto meteorologico."""
+    cleaned = re.sub(r"https?://\S+|(?:^|\s)#[\wÀ-ÿ_]+", " ", text)
+    sentences = [
+        sanitize(sentence)
+        for sentence in re.split(r"(?<=[.!?])\s+|\n+", cleaned)
+        if len(sanitize(sentence)) >= 18
+    ]
+    if not sentences:
+        return ""
+    weather_terms = re.compile(
+        r"piogg|rovesc|tempor|sole|seren|nuvol|vento|neve|temperatur|"
+        r"caldo|freddo|mattin|pomerig|sera|notte|oggi|domani|mm|grad",
+        re.IGNORECASE,
+    )
+    sentence = max(
+        sentences,
+        key=lambda value: (len(weather_terms.findall(value)), bool(re.search(r"\d", value))),
+    )
+    words = sentence.split()
+    if len(words) <= max_words:
+        return sentence
+    return " ".join(words[:max_words]).rstrip(" ,;:") + "…"
+
+
+def _expert_detail(source: SourceNote | None, display_name: str) -> str:
+    """Trasforma la caption in una nota esperta attribuita, senza ripubblicarla integralmente."""
+    if not source or not source.available or not source.text:
+        return ""
+    signals = _signals(source.text)
+    labels = {
+        "temporali": "temporali",
+        "rovesci": "rovesci",
+        "pioggia": "precipitazioni",
+        "sole": "schiarite o sole",
+        "nuvole": "nuvolosità",
+        "vento": "vento o raffiche",
+        "neve": "neve o quota neve",
+        "caldo": "caldo",
+        "freddo": "calo termico o freddo",
+    }
+    ordered = (
+        "temporali", "rovesci", "pioggia", "vento", "neve",
+        "caldo", "freddo", "sole", "nuvole",
+    )
+    phenomena = [labels[item] for item in ordered if item in signals][:4]
+    focus = _caption_focus(source.text)
+    update = f", aggiornamento {source.updated_at}" if source.updated_at else ""
+    if phenomena:
+        intro = (
+            f"Il punto di {display_name}{update}: nelle descrizioni dei post recenti "
+            f"l’attenzione è soprattutto su {', '.join(phenomena)}."
+        )
+    else:
+        intro = f"Il punto di {display_name}{update}: è disponibile una nuova descrizione meteorologica."
+    if focus:
+        intro += f" Passaggio chiave: «{focus}»"
+    return sanitize(intro)
 
 
 def _watch_items(zones: list[ZoneForecast], sources: list[SourceNote]) -> list[WatchItem]:
@@ -310,6 +371,12 @@ def build_edition(
     bolzano_numbers, bolzano_map, bolzano_paragraphs = _province_content(
         zones, "Provincia di Bolzano", bolzano
     )
+    poletti_note = _expert_detail(_source(sources, "Giacomo Poletti"), "Giacomo Poletti")
+    rosspach_note = _expert_detail(_source(sources, "Meteo Rosspach"), "Meteo Rosspach")
+    if poletti_note:
+        trentino_paragraphs.insert(1, poletti_note)
+    if rosspach_note:
+        bolzano_paragraphs.insert(1, rosspach_note)
     thirty_seconds = sanitize(
         f"{phrase} In Trentino massime zonali fino a {trentino_stats['max']} °C "
         f"e probabilità di precipitazione fino al {trentino_stats['rain']}%; "

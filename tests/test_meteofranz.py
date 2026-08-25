@@ -13,6 +13,7 @@ from meteofranz.editorial import build_edition
 from meteofranz.email_renderer import render_email
 from meteofranz.main import _sample_sources
 from meteofranz.map_renderer import _province_features
+from meteofranz.models import SourceNote
 from meteofranz.sources import fetch_poletti_rss, fetch_ross_pacher
 from meteofranz.weather import sample_zone_forecasts
 
@@ -78,6 +79,56 @@ class MeteoFranzTests(unittest.TestCase):
         with patch("meteofranz.sources._fetch", return_value=xml):
             source = fetch_poletti_rss(now=now)
         self.assertFalse(source.available)
+
+    def test_poletti_reads_multiple_recent_instagram_captions(self) -> None:
+        xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>
+        <item>
+          <title>Nuovo post Instagram</title>
+          <link>https://www.instagram.com/p/new/</link>
+          <media:content url="https://example.test/new.jpg">
+            <media:description>Stamattina piogge in esaurimento; nel pomeriggio schiarite diffuse nelle valli.</media:description>
+          </media:content>
+          <pubDate>Tue, 25 Aug 2026 05:40:00 GMT</pubDate>
+        </item>
+        <item>
+          <title>Post della sera precedente</title>
+          <link>https://www.instagram.com/p/previous/</link>
+          <description><![CDATA[Domani torna il sole, con temperature in aumento e vento debole in montagna.]]></description>
+          <pubDate>Mon, 24 Aug 2026 19:20:00 GMT</pubDate>
+        </item>
+        </channel></rss>"""
+        now = datetime(2026, 8, 25, 7, 25, tzinfo=ZoneInfo("Europe/Rome"))
+        with patch("meteofranz.sources._fetch", return_value=xml):
+            source = fetch_poletti_rss(now=now)
+        self.assertTrue(source.available)
+        self.assertIn("piogge in esaurimento", source.text)
+        self.assertIn("temperature in aumento", source.text)
+        self.assertEqual(source.url, "https://www.instagram.com/p/new/")
+
+    def test_poletti_and_rosspach_have_equal_named_editorial_weight(self) -> None:
+        sources = _sample_sources()
+        sources[2] = SourceNote(
+            "Meteo Rosspach",
+            "https://t.me/rosspach/999",
+            True,
+            "Tue, 25 Aug 2026 05:05:00 GMT",
+            "Aggiornamento mattutino",
+            "Nuvolosita irregolare e possibili rovesci nel pomeriggio, poi vento da nord.",
+        )
+        sources[3] = SourceNote(
+            "Giacomo Poletti",
+            "https://www.instagram.com/p/example/",
+            True,
+            "Tue, 25 Aug 2026 05:10:00 GMT",
+            "Previsione del giorno",
+            "Piogge al mattino, poi schiarite ampie e temperature in ripresa nel pomeriggio.",
+        )
+        edition = build_edition(self.day, self.zones, sources)
+        self.assertTrue(any("Il punto di Giacomo Poletti" in item for item in edition.trentino_paragraphs))
+        self.assertTrue(any("Il punto di Meteo Rosspach" in item for item in edition.bolzano_paragraphs))
+        self.assertIn("Giacomo Poletti", edition.thirty_seconds)
+        self.assertIn("Meteo Rosspach", edition.thirty_seconds)
 
     def test_rosspach_uses_the_approved_recent_rss_feed_first(self) -> None:
         xml = b"""<?xml version="1.0" encoding="UTF-8"?>
