@@ -1,0 +1,435 @@
+{
+  "date_iso": "2026-08-25",
+  "date_label": "martedì 25 agosto 2026",
+  "phrase": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali.",
+  "deck": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. Il contributo esperto pubblico disponibile è coerente sul segnale di temporali.",
+  "confidence": "medio-alta",
+  "thirty_seconds": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. Il contributo esperto pubblico disponibile è coerente sul segnale di temporali.",
+  "quick_cards": [
+    {
+      "label": "Oggi",
+      "value": "⛈️ Temporali",
+      "text": "Differenze locali fra fondovalle e rilievi."
+    },
+    {
+      "label": "Pomeriggio e sera",
+      "value": "🌧️ Rischio alto",
+      "text": "Probabilità zonale fino al 100%."
+    },
+    {
+      "label": "Prossime 48 ore",
+      "value": "🌤️ Senza svolte nette",
+      "text": "Al momento non emerge un peggioramento diffuso."
+    }
+  ],
+  "map_trentino_note": "Prevalenza di condizioni temporali. Massime fra 21 e 26 °C; probabilità di precipitazione fino al 100%.",
+  "map_bolzano_note": "Prevalenza di condizioni temporali. Massime fra 18 e 26 °C; probabilità di precipitazione fino al 100%.",
+  "trentino_numbers": "Trento 26 °C · Alto Garda 26 °C · Giudicarie 23 °C · Valsugana 25 °C · Val Di Non 23 °C · Fiemme 21 °C",
+  "bolzano_numbers": "Bolzano 26 °C · Merano 25 °C · Val Pusteria 18 °C · Val Venosta 21 °C · Val Isarco 21 °C",
+  "trentino_paragraphs": [
+    "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento.",
+    "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Da sorvegliare anche raffiche modellistiche fino a circa 46 km/h. Oggi la probabilità più alta di precipitazione riguarda Alto Garda (100%)."
+  ],
+  "bolzano_paragraphs": [
+    "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano.",
+    "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Merano (100%)."
+  ],
+  "trentino_summary": "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Da sorvegliare anche raffiche modellistiche fino a circa 46 km/h. Oggi la probabilità più alta di precipitazione riguarda Alto Garda (100%).",
+  "bolzano_summary": "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Merano (100%).",
+  "watch_items": [
+    {
+      "label": "Mercoledì",
+      "text": "Non emerge un fenomeno diffuso dominante. Probabilità massima di precipitazione 5% e temperature zonali fra 12 e 31 °C."
+    },
+    {
+      "label": "Giovedì",
+      "text": "Non emerge un fenomeno diffuso dominante. Probabilità massima di precipitazione 10% e temperature zonali fra 14 e 31 °C. Possibili raffiche fino a circa 46 km/h."
+    }
+  ],
+  "zones": [
+    {
+      "name": "TRENTO",
+      "province": "Trentino",
+      "latitude": 46.0748,
+      "longitude": 11.1217,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 80,
+          "temp_min": 21,
+          "temp_max": 26,
+          "precipitation_probability": 95,
+          "wind_gust": 13
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 19,
+          "temp_max": 31,
+          "precipitation_probability": 0,
+          "wind_gust": 12
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 20,
+          "temp_max": 31,
+          "precipitation_probability": 3,
+          "wind_gust": 19
+        }
+      ]
+    },
+    {
+      "name": "ALTO GARDA",
+      "province": "Trentino",
+      "latitude": 45.8892,
+      "longitude": 10.8431,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 61,
+          "temp_min": 22,
+          "temp_max": 26,
+          "precipitation_probability": 100,
+          "wind_gust": 19
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 21,
+          "temp_max": 30,
+          "precipitation_probability": 0,
+          "wind_gust": 34
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 22,
+          "temp_max": 30,
+          "precipitation_probability": 3,
+          "wind_gust": 25
+        }
+      ]
+    },
+    {
+      "name": "GIUDICARIE",
+      "province": "Trentino",
+      "latitude": 46.0355,
+      "longitude": 10.7267,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 17,
+          "temp_max": 23,
+          "precipitation_probability": 100,
+          "wind_gust": 16
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 15,
+          "temp_max": 27,
+          "precipitation_probability": 0,
+          "wind_gust": 16
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 16,
+          "temp_max": 27,
+          "precipitation_probability": 3,
+          "wind_gust": 37
+        }
+      ]
+    },
+    {
+      "name": "VALSUGANA",
+      "province": "Trentino",
+      "latitude": 46.052,
+      "longitude": 11.4561,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 20,
+          "temp_max": 25,
+          "precipitation_probability": 100,
+          "wind_gust": 20
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 18,
+          "temp_max": 30,
+          "precipitation_probability": 5,
+          "wind_gust": 16
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 20,
+          "temp_max": 31,
+          "precipitation_probability": 5,
+          "wind_gust": 23
+        }
+      ]
+    },
+    {
+      "name": "VAL DI NON",
+      "province": "Trentino",
+      "latitude": 46.3657,
+      "longitude": 11.0351,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 18,
+          "temp_max": 23,
+          "precipitation_probability": 100,
+          "wind_gust": 13
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 16,
+          "temp_max": 26,
+          "precipitation_probability": 0,
+          "wind_gust": 19
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 17,
+          "temp_max": 26,
+          "precipitation_probability": 3,
+          "wind_gust": 14
+        }
+      ]
+    },
+    {
+      "name": "FIEMME",
+      "province": "Trentino",
+      "latitude": 46.2914,
+      "longitude": 11.4598,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 15,
+          "temp_max": 21,
+          "precipitation_probability": 98,
+          "wind_gust": 29
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 14,
+          "temp_max": 25,
+          "precipitation_probability": 3,
+          "wind_gust": 26
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 14,
+          "temp_max": 26,
+          "precipitation_probability": 5,
+          "wind_gust": 46
+        }
+      ]
+    },
+    {
+      "name": "BOLZANO",
+      "province": "Provincia di Bolzano",
+      "latitude": 46.4983,
+      "longitude": 11.3548,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 20,
+          "temp_max": 26,
+          "precipitation_probability": 90,
+          "wind_gust": 31
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 18,
+          "temp_max": 30,
+          "precipitation_probability": 3,
+          "wind_gust": 19
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 20,
+          "temp_max": 30,
+          "precipitation_probability": 3,
+          "wind_gust": 18
+        }
+      ]
+    },
+    {
+      "name": "MERANO",
+      "province": "Provincia di Bolzano",
+      "latitude": 46.6713,
+      "longitude": 11.1594,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 19,
+          "temp_max": 25,
+          "precipitation_probability": 100,
+          "wind_gust": 19
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 18,
+          "temp_max": 30,
+          "precipitation_probability": 3,
+          "wind_gust": 10
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 22,
+          "temp_max": 28,
+          "precipitation_probability": 10,
+          "wind_gust": 19
+        }
+      ]
+    },
+    {
+      "name": "VAL PUSTERIA",
+      "province": "Provincia di Bolzano",
+      "latitude": 46.7966,
+      "longitude": 11.9368,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 80,
+          "temp_min": 14,
+          "temp_max": 18,
+          "precipitation_probability": 88,
+          "wind_gust": 12
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 12,
+          "temp_max": 25,
+          "precipitation_probability": 5,
+          "wind_gust": 12
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 16,
+          "temp_max": 25,
+          "precipitation_probability": 5,
+          "wind_gust": 16
+        }
+      ]
+    },
+    {
+      "name": "VAL VENOSTA",
+      "province": "Provincia di Bolzano",
+      "latitude": 46.6288,
+      "longitude": 10.7721,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 80,
+          "temp_min": 16,
+          "temp_max": 21,
+          "precipitation_probability": 100,
+          "wind_gust": 17
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 15,
+          "temp_max": 26,
+          "precipitation_probability": 3,
+          "wind_gust": 24
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 16,
+          "temp_max": 26,
+          "precipitation_probability": 3,
+          "wind_gust": 31
+        }
+      ]
+    },
+    {
+      "name": "VAL ISARCO",
+      "province": "Provincia di Bolzano",
+      "latitude": 46.7164,
+      "longitude": 11.6575,
+      "days": [
+        {
+          "date": "2026-08-25",
+          "weather_code": 95,
+          "temp_min": 16,
+          "temp_max": 21,
+          "precipitation_probability": 93,
+          "wind_gust": 10
+        },
+        {
+          "date": "2026-08-26",
+          "weather_code": 3,
+          "temp_min": 14,
+          "temp_max": 28,
+          "precipitation_probability": 0,
+          "wind_gust": 22
+        },
+        {
+          "date": "2026-08-27",
+          "weather_code": 3,
+          "temp_min": 17,
+          "temp_max": 27,
+          "precipitation_probability": 3,
+          "wind_gust": 13
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Meteotrentino",
+      "url": "https://www.meteotrentino.it/previsioni/bollettino-meteorologico-ufficiale-per-il-trentino/",
+      "available": true,
+      "updated_at": "25/08/2026 - 10:35",
+      "title": "Bollettino meteorologico ufficiale"
+    },
+    {
+      "name": "Servizio meteorologico Provincia di Bolzano",
+      "url": "https://meteo.provincia.bz.it/it/",
+      "available": true,
+      "updated_at": "Tue, 25 Aug 2026 09:00:49 GMT",
+      "title": "25.08.2026 Tempo variabile"
+    },
+    {
+      "name": "Meteo Rosspach",
+      "url": "https://t.me/rosspach/719",
+      "available": true,
+      "updated_at": "Sun, 23 Aug 2026 19:28:03 GMT",
+      "title": "🚨⚡🥵 La fase temporalesca di giovedì e venerdì ha portato un po' di pioggia su tutto il territorio. Oltre 100 mm sono c..."
+    },
+    {
+      "name": "Giacomo Poletti",
+      "url": "https://www.instagram.com/p/Dcc4-Vko0NW",
+      "available": true,
+      "updated_at": "Tue, 25 Aug 2026 05:32:18 GMT",
+      "title": "Aggiornato: martedì 25 migliora dal pomeriggio. Stanotte è passata la veloce pioggia: fra la notte e l'alba sono arrivat..."
+    }
+  ],
+  "map_url": "https://raw.githubusercontent.com/meteo-franz/meteofranz/main/output/map.png?v=20260825",
+  "official_sources_available": 2
+}
