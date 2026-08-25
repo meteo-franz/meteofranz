@@ -2,9 +2,9 @@
   "date_iso": "2026-08-25",
   "date_label": "martedì 25 agosto 2026",
   "phrase": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali.",
-  "deck": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach sono coerenti sul segnale di temporali.",
+  "deck": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach e Giacomo Poletti sono coerenti sul segnale di temporali.",
   "confidence": "medio-alta",
-  "thirty_seconds": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach sono coerenti sul segnale di temporali.",
+  "thirty_seconds": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 26 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach e Giacomo Poletti sono coerenti sul segnale di temporali.",
   "quick_cards": [
     {
       "label": "Oggi",
@@ -27,16 +27,15 @@
   "trentino_numbers": "Trento 26 °C · Alto Garda 26 °C · Giudicarie 23 °C · Valsugana 25 °C · Val Di Non 23 °C · Fiemme 21 °C",
   "bolzano_numbers": "Bolzano 26 °C · Merano 25 °C · Val Pusteria 18 °C · Val Venosta 21 °C · Val Isarco 21 °C",
   "trentino_paragraphs": [
-    "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento.",
+    "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Nella lettura ponderata, Giacomo Poletti conferma il segnale di rovesci, precipitazioni e schiarite e aggiunge temperature elevate e nuvolosità, con indicazioni concentrate tra mattino, pomeriggio, sera e notte e valori citati di 3-15 mm, 14.4 mm, 13.4 mm e 4-6 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento.",
     "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Da sorvegliare anche raffiche modellistiche fino a circa 46 km/h. Oggi la probabilità più alta di precipitazione riguarda Alto Garda (100%)."
   ],
   "bolzano_paragraphs": [
-    "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano.",
-    "Il punto di Meteo Rosspach, aggiornamento Sun, 23 Aug 2026 19:28:03 GMT: nelle descrizioni dei post recenti l’attenzione è soprattutto su temporali, rovesci, precipitazioni, neve o quota neve. Passaggio chiave: «Oltre 100 mm sono caduti in Val Rendena, a ridosso del Brenta e dell’Adamello: 136.2 mm a Dos del Sabbion, 122.4 mm in Val…»",
+    "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Nella lettura ponderata, Meteo Rosspach conferma il segnale di rovesci e aggiunge temporali, precipitazioni e neve o quota neve, con indicazioni concentrate tra mattino, pomeriggio e notte e valori citati di 100 mm, 136.2 mm, 122.4 mm e 121.6 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano.",
     "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Merano (100%)."
   ],
-  "trentino_summary": "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Da sorvegliare anche raffiche modellistiche fino a circa 46 km/h. Oggi la probabilità più alta di precipitazione riguarda Alto Garda (100%).",
-  "bolzano_summary": "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Le indicazioni zonali descrivono un quadro prevalentemente temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano. Il punto di Meteo Rosspach, aggiornamento Sun, 23 Aug 2026 19:28:03 GMT: nelle descrizioni dei post recenti l’attenzione è soprattutto su temporali, rovesci, precipitazioni, neve o quota neve. Passaggio chiave: «Oltre 100 mm sono caduti in Val Rendena, a ridosso del Brenta e dell’Adamello: 136.2 mm a Dos del Sabbion, 122.4 mm in Val…» Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Merano (100%).",
+  "trentino_summary": "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Nella lettura ponderata, Giacomo Poletti conferma il segnale di rovesci, precipitazioni e schiarite e aggiunge temperature elevate e nuvolosità, con indicazioni concentrate tra mattino, pomeriggio, sera e notte e valori citati di 3-15 mm, 14.4 mm, 13.4 mm e 4-6 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 21 e 26 °C. I valori più elevati sono attesi in zona Trento. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Da sorvegliare anche raffiche modellistiche fino a circa 46 km/h. Oggi la probabilità più alta di precipitazione riguarda Alto Garda (100%).",
+  "bolzano_summary": "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Nella lettura ponderata, Meteo Rosspach conferma il segnale di rovesci e aggiunge temporali, precipitazioni e neve o quota neve, con indicazioni concentrate tra mattino, pomeriggio e notte e valori citati di 100 mm, 136.2 mm, 122.4 mm e 121.6 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 18 e 26 °C. I valori più elevati sono attesi in zona Bolzano. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Merano (100%).",
   "watch_items": [
     {
       "label": "Mercoledì",
@@ -425,10 +424,10 @@
     },
     {
       "name": "Giacomo Poletti",
-      "url": "https://www.instagram.com/giacomo_poletti81/",
-      "available": false,
-      "updated_at": "",
-      "title": ""
+      "url": "https://www.instagram.com/p/Dcc4-Vko0NW",
+      "available": true,
+      "updated_at": "Tue, 25 Aug 2026 05:32:18 GMT",
+      "title": "Aggiornato: martedì 25 migliora dal pomeriggio. Stanotte è passata la veloce pioggia: fra la notte e l'alba sono arrivat..."
     }
   ],
   "map_url": "https://raw.githubusercontent.com/meteo-franz/meteofranz/main/output/map.png?v=20260825",
