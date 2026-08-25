@@ -125,10 +125,17 @@ class MeteoFranzTests(unittest.TestCase):
             "Piogge al mattino, poi schiarite ampie e temperature in ripresa nel pomeriggio.",
         )
         edition = build_edition(self.day, self.zones, sources)
-        self.assertTrue(any("Il punto di Giacomo Poletti" in item for item in edition.trentino_paragraphs))
-        self.assertTrue(any("Il punto di Meteo Rosspach" in item for item in edition.bolzano_paragraphs))
+        self.assertTrue(any("Nella lettura ponderata, Giacomo Poletti" in item for item in edition.trentino_paragraphs))
+        self.assertTrue(any("Nella lettura ponderata, Meteo Rosspach" in item for item in edition.bolzano_paragraphs))
+        self.assertTrue(any("mattino" in item and "pomeriggio" in item for item in edition.trentino_paragraphs))
         self.assertIn("Giacomo Poletti", edition.thirty_seconds)
         self.assertIn("Meteo Rosspach", edition.thirty_seconds)
+
+    def test_new_poletti_feed_is_the_only_configured_feed(self) -> None:
+        self.assertEqual(
+            POLETTI_RSS_URL,
+            "https://rss.app/feeds/bMzI1xUXAH6xNnf9.xml",
+        )
 
     def test_rosspach_uses_the_approved_recent_rss_feed_first(self) -> None:
         xml = b"""<?xml version="1.0" encoding="UTF-8"?>

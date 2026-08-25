@@ -40,7 +40,7 @@ ROSS_PACHER_PUBLIC_URL = "https://t.me/rosspach"
 ROSS_PACHER_FACEBOOK_URL = "https://www.facebook.com/share/1K3UVf6oTb/"
 ROSS_PACHER_RSS_URL = "https://rss.app/feeds/ZoUYFBZngBg7gg2q.xml"
 POLETTI_INSTAGRAM_URL = "https://www.instagram.com/giacomo_poletti81/"
-POLETTI_RSS_URL = "https://rss.app/feeds/vK7EEuALtKzCteSr.xml"
+POLETTI_RSS_URL = "https://rss.app/feeds/bMzI1xUXAH6xNnf9.xml"
 OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
 PROVINCES_GEOJSON_URL = (
     "https://raw.githubusercontent.com/guglielmo/geojson-italy/main/"

@@ -22,7 +22,11 @@ from .config import (
 from .models import SourceNote
 
 
-USER_AGENT = "Mozilla/5.0 (compatible; MeteoFranz/0.1; personal weather newsletter)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/151.0.0.0 Safari/537.36"
+)
 ROME = ZoneInfo("Europe/Rome")
 
 
@@ -34,7 +38,12 @@ def sanitize(text: str) -> str:
 def _fetch(url: str, timeout: int = 30) -> bytes:
     request = urllib.request.Request(
         url,
-        headers={"User-Agent": USER_AGENT, "Accept-Language": "it-IT,it;q=0.9"},
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "application/rss+xml,application/xml,text/xml,text/html;q=0.9,*/*;q=0.8",
+            "Accept-Language": "it-IT,it;q=0.9,en;q=0.7",
+            "Cache-Control": "no-cache",
+        },
     )
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return response.read()
@@ -345,7 +354,10 @@ def _fetch_recent_social_rss(
             name=name,
             url=fallback_url,
             available=False,
-            text=f"Nessun contributo pubblico recente verificabile: {type(exc).__name__}",
+            text=(
+                "Nessun contributo pubblico recente verificabile: "
+                f"{type(exc).__name__}: {exc}"
+            ),
         )
 
 

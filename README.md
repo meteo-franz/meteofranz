@@ -14,7 +14,7 @@ Newsletter meteo personale per Trentino e Sudtirolo, preparata automaticamente o
 - blocca l'invio se entrambe le fonti ufficiali non sono disponibili;
 - invia o programma la campagna attraverso Brevo.
 
-Per Giacomo Poletti viene usato esclusivamente il feed XML `https://rss.app/feeds/vK7EEuALtKzCteSr.xml`; per Meteo Rosspach viene usato prima `https://rss.app/feeds/ZoUYFBZngBg7gg2q.xml`, mantenendo il canale Telegram come riserva. Per entrambi vengono lette fino a tre descrizioni con data verificabile pubblicate nelle ultime 48 ore. I due contributi hanno lo stesso peso editoriale e sono attribuiti esplicitamente nei riepiloghi provinciali; i bollettini ufficiali restano prioritari. Facebook resta una fonte di riscontro e non viene interrogato direttamente.
+Per Giacomo Poletti viene usato esclusivamente il feed XML `https://rss.app/feeds/bMzI1xUXAH6xNnf9.xml`; per Meteo Rosspach viene usato prima `https://rss.app/feeds/ZoUYFBZngBg7gg2q.xml`, mantenendo il canale Telegram come riserva. Per entrambi vengono lette fino a tre descrizioni con data verificabile pubblicate nelle ultime 48 ore. I due contributi hanno lo stesso peso editoriale: fenomeni, momenti della giornata e valori numerici vengono condensati insieme al bollettino ufficiale nel riepilogo della provincia pertinente. I bollettini ufficiali restano prioritari. Facebook resta una fonte di riscontro e non viene interrogato direttamente.
 
 ## Le 11 zone
 

@@ -133,7 +133,11 @@ def _province_summary(
 
 
 def _province_content(
-    zones: list[ZoneForecast], province: str, official: SourceNote | None
+    zones: list[ZoneForecast],
+    province: str,
+    official: SourceNote | None,
+    expert: SourceNote | None,
+    expert_name: str,
 ) -> tuple[str, str, list[str]]:
     stats = _province_stats(zones, province)
     selected = stats["zones"]
@@ -143,9 +147,11 @@ def _province_content(
     numbers = " · ".join(
         f"{zone.name.title()} {zone.days[0].temp_max} °C" for zone in selected
     )
+    official_part = _official_sentence(official)
+    expert_part = _expert_merge_sentence(official, expert, expert_name)
     first = sanitize(
-        f"{_official_sentence(official)} Le indicazioni zonali descrivono un quadro "
-        f"prevalentemente {stats['dominant']}, con massime fra {min_maximum} e "
+        f"{official_part} {expert_part} Nel complesso, le indicazioni zonali descrivono un quadro "
+        f"{stats['dominant']}, con massime fra {min_maximum} e "
         f"{stats['max']} °C. I valori più elevati sono attesi in zona "
         f"{max_place.name.title()}."
     )
@@ -219,64 +225,99 @@ def _expert_sentence(sources: list[SourceNote]) -> str:
     return ""
 
 
-def _caption_focus(text: str, max_words: int = 24) -> str:
-    """Seleziona un passaggio breve della caption, privilegiando contenuto meteorologico."""
-    cleaned = re.sub(r"https?://\S+|(?:^|\s)#[\wÀ-ÿ_]+", " ", text)
-    sentences = [
-        sanitize(sentence)
-        for sentence in re.split(r"(?<=[.!?])\s+|\n+", cleaned)
-        if len(sanitize(sentence)) >= 18
-    ]
-    if not sentences:
-        return ""
-    weather_terms = re.compile(
-        r"piogg|rovesc|tempor|sole|seren|nuvol|vento|neve|temperatur|"
-        r"caldo|freddo|mattin|pomerig|sera|notte|oggi|domani|mm|grad",
-        re.IGNORECASE,
-    )
-    sentence = max(
-        sentences,
-        key=lambda value: (len(weather_terms.findall(value)), bool(re.search(r"\d", value))),
-    )
-    words = sentence.split()
-    if len(words) <= max_words:
-        return sentence
-    return " ".join(words[:max_words]).rstrip(" ,;:") + "…"
-
-
-def _expert_detail(source: SourceNote | None, display_name: str) -> str:
-    """Trasforma la caption in una nota esperta attribuita, senza ripubblicarla integralmente."""
-    if not source or not source.available or not source.text:
-        return ""
-    signals = _signals(source.text)
+def _weather_labels(signals: set[str]) -> list[str]:
     labels = {
         "temporali": "temporali",
         "rovesci": "rovesci",
         "pioggia": "precipitazioni",
-        "sole": "schiarite o sole",
+        "sole": "schiarite",
         "nuvole": "nuvolosità",
         "vento": "vento o raffiche",
         "neve": "neve o quota neve",
-        "caldo": "caldo",
-        "freddo": "calo termico o freddo",
+        "caldo": "temperature elevate",
+        "freddo": "calo termico",
     }
-    ordered = (
+    order = (
         "temporali", "rovesci", "pioggia", "vento", "neve",
         "caldo", "freddo", "sole", "nuvole",
     )
-    phenomena = [labels[item] for item in ordered if item in signals][:4]
-    focus = _caption_focus(source.text)
-    update = f", aggiornamento {source.updated_at}" if source.updated_at else ""
-    if phenomena:
-        intro = (
-            f"Il punto di {display_name}{update}: nelle descrizioni dei post recenti "
-            f"l’attenzione è soprattutto su {', '.join(phenomena)}."
-        )
-    else:
-        intro = f"Il punto di {display_name}{update}: è disponibile una nuova descrizione meteorologica."
-    if focus:
-        intro += f" Passaggio chiave: «{focus}»"
-    return sanitize(intro)
+    return [labels[item] for item in order if item in signals]
+
+
+def _join_labels(values: list[str]) -> str:
+    if not values:
+        return ""
+    if len(values) == 1:
+        return values[0]
+    return ", ".join(values[:-1]) + f" e {values[-1]}"
+
+
+def _caption_timings(text: str) -> str:
+    lowered = sanitize(text).lower()
+    timings: list[str] = []
+    patterns = (
+        ("mattino", r"mattin|prime ore|alba"),
+        ("pomeriggio", r"pomerig|ore più calde"),
+        ("sera", r"sera|serata"),
+        ("notte", r"notte|nottata"),
+    )
+    for label, pattern in patterns:
+        if re.search(pattern, lowered):
+            timings.append(label)
+    return _join_labels(timings)
+
+
+def _caption_values(text: str) -> list[str]:
+    values = re.findall(
+        r"\b\d+(?:[.,]\d+)?(?:\s*[-–/]\s*\d+(?:[.,]\d+)?)?\s*"
+        r"(?:°C|°|gradi|mm|km/h)\b",
+        text,
+        flags=re.IGNORECASE,
+    )
+    unique: list[str] = []
+    for value in values:
+        normalized = sanitize(value)
+        if normalized.casefold() not in {item.casefold() for item in unique}:
+            unique.append(normalized)
+    return unique[:4]
+
+
+def _expert_merge_sentence(
+    official: SourceNote | None,
+    expert: SourceNote | None,
+    expert_name: str,
+) -> str:
+    """Confronta bollettino e caption e restituisce una vera sintesi ponderata."""
+    if not expert or not expert.available or not expert.text:
+        return ""
+    official_signals = (
+        _signals(f"{official.title} {official.text}")
+        if official and official.available
+        else set()
+    )
+    expert_signals = _signals(f"{expert.title} {expert.text}")
+    shared = _weather_labels(official_signals & expert_signals)
+    added = _weather_labels(expert_signals - official_signals)
+    parts: list[str] = []
+    if shared:
+        parts.append(f"conferma il segnale di {_join_labels(shared[:3])}")
+    if added:
+        verb = "aggiunge" if shared else "richiama"
+        parts.append(f"{verb} {_join_labels(added[:3])}")
+    if not parts:
+        parts.append("offre una lettura locale senza introdurre un segnale dominante diverso")
+    timing = _caption_timings(expert.text)
+    values = _caption_values(expert.text)
+    detail = " e ".join(parts)
+    if timing:
+        timing_prefix = "tra" if " e " in timing or "," in timing else "nel"
+        detail += f", con indicazioni concentrate {timing_prefix} {timing}"
+    if values:
+        detail += f" e valori citati di {_join_labels(values)}"
+    return sanitize(
+        f"Nella lettura ponderata, {expert_name} {detail}; il contributo esperto "
+        "affina il dettaglio locale senza sostituire il bollettino ufficiale."
+    )
 
 
 def _watch_items(zones: list[ZoneForecast], sources: list[SourceNote]) -> list[WatchItem]:
@@ -366,17 +407,19 @@ def build_edition(
     trentino_stats = _province_stats(zones, "Trentino")
     bolzano_stats = _province_stats(zones, "Provincia di Bolzano")
     trentino_numbers, trentino_map, trentino_paragraphs = _province_content(
-        zones, "Trentino", trentino
+        zones,
+        "Trentino",
+        trentino,
+        _source(sources, "Giacomo Poletti"),
+        "Giacomo Poletti",
     )
     bolzano_numbers, bolzano_map, bolzano_paragraphs = _province_content(
-        zones, "Provincia di Bolzano", bolzano
+        zones,
+        "Provincia di Bolzano",
+        bolzano,
+        _source(sources, "Meteo Rosspach"),
+        "Meteo Rosspach",
     )
-    poletti_note = _expert_detail(_source(sources, "Giacomo Poletti"), "Giacomo Poletti")
-    rosspach_note = _expert_detail(_source(sources, "Meteo Rosspach"), "Meteo Rosspach")
-    if poletti_note:
-        trentino_paragraphs.insert(1, poletti_note)
-    if rosspach_note:
-        bolzano_paragraphs.insert(1, rosspach_note)
     thirty_seconds = sanitize(
         f"{phrase} In Trentino massime zonali fino a {trentino_stats['max']} °C "
         f"e probabilità di precipitazione fino al {trentino_stats['rain']}%; "

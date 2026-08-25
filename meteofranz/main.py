@@ -45,6 +45,14 @@ def build(*, sample: bool = False) -> dict:
     Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
     zones = sample_zone_forecasts(now.date().isoformat()) if sample else fetch_zone_forecasts()
     sources = _sample_sources() if sample else fetch_all_sources()
+    for source in sources:
+        if source.available:
+            print(
+                f"Fonte {source.name}: OK; aggiornamento={source.updated_at or 'non indicato'}; "
+                f"caratteri={len(source.text)}"
+            )
+        else:
+            print(f"Fonte {source.name}: NON DISPONIBILE; motivo={source.text}")
     edition = build_edition(now.date(), zones, sources)
     render_map(edition.zones, MAP_PATH)
     map_url = public_map_url(edition.date_iso.replace("-", ""))
