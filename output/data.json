@@ -1,49 +1,49 @@
 {
-  "date_iso": "2026-09-10",
-  "date_label": "giovedì 10 settembre 2026",
-  "phrase": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali.",
-  "deck": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 24 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 21 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach sono coerenti sul segnale di precipitazioni.",
+  "date_iso": "2026-09-11",
+  "date_label": "venerdì 11 settembre 2026",
+  "phrase": "Giornata variabile: ombrello utile nelle zone con precipitazioni più probabili.",
+  "deck": "Giornata variabile: ombrello utile nelle zone con precipitazioni più probabili. In Trentino massime zonali fino a 25 °C e probabilità di precipitazione fino al 90%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 55%.",
   "confidence": "medio-alta",
-  "thirty_seconds": "Schiarite possibili, ma resta da seguire il rischio di rovesci e temporali. In Trentino massime zonali fino a 24 °C e probabilità di precipitazione fino al 100%; in Provincia di Bolzano massime fino a 21 °C e probabilità fino al 100%. I contributi recenti di Meteo Rosspach sono coerenti sul segnale di precipitazioni.",
+  "thirty_seconds": "Giornata variabile: ombrello utile nelle zone con precipitazioni più probabili. In Trentino massime zonali fino a 25 °C e probabilità di precipitazione fino al 90%; in Provincia di Bolzano massime fino a 26 °C e probabilità fino al 55%.",
   "quick_cards": [
     {
       "label": "Oggi",
-      "value": "⛈️ Temporali",
+      "value": "☁️ Molto nuvoloso",
       "text": "Differenze locali fra fondovalle e rilievi."
     },
     {
       "label": "Pomeriggio e sera",
       "value": "🌧️ Rischio alto",
-      "text": "Probabilità zonale fino al 100%."
+      "text": "Probabilità zonale fino al 90%."
     },
     {
       "label": "Prossime 48 ore",
-      "value": "🌧️ Più variabile",
-      "text": "Probabilità zonale fino al 68%."
+      "value": "🌤️ Senza svolte nette",
+      "text": "Al momento non emerge un peggioramento diffuso."
     }
   ],
-  "map_trentino_note": "Prevalenza di condizioni temporali. Massime fra 16 e 24 °C; probabilità di precipitazione fino al 100%.",
-  "map_bolzano_note": "Prevalenza di condizioni rovesci. Massime fra 16 e 21 °C; probabilità di precipitazione fino al 100%.",
-  "trentino_numbers": "Trento 22 °C · Alto Garda 24 °C · Giudicarie 20 °C · Valsugana 21 °C · Val Di Non 18 °C · Fiemme 16 °C",
-  "bolzano_numbers": "Bolzano 21 °C · Merano 20 °C · Val Pusteria 16 °C · Val Venosta 17 °C · Val Isarco 18 °C",
+  "map_trentino_note": "Prevalenza di condizioni molto nuvoloso. Massime fra 20 e 25 °C; probabilità di precipitazione fino al 90%.",
+  "map_bolzano_note": "Prevalenza di condizioni rovesci. Massime fra 20 e 26 °C; probabilità di precipitazione fino al 55%.",
+  "trentino_numbers": "Trento 25 °C · Alto Garda 25 °C · Giudicarie 22 °C · Valsugana 25 °C · Val Di Non 22 °C · Fiemme 20 °C",
+  "bolzano_numbers": "Bolzano 26 °C · Merano 25 °C · Val Pusteria 20 °C · Val Venosta 22 °C · Val Isarco 22 °C",
   "trentino_paragraphs": [
-    "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 16 e 24 °C. I valori più elevati sono attesi in zona Alto Garda.",
-    "Nelle successive 48 ore cresce la probabilità di precipitazioni in alcune zone. Oggi la probabilità più alta di precipitazione riguarda Trento (100%)."
+    "L’indicazione ufficiale segnala precipitazioni o rovesci tra mattino e pomeriggio. Nel complesso, le indicazioni zonali descrivono un quadro molto nuvoloso, con massime fra 20 e 25 °C. I valori più elevati sono attesi in zona Trento.",
+    "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Valsugana (90%)."
   ],
   "bolzano_paragraphs": [
-    "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Nella lettura ponderata, Meteo Rosspach conferma il segnale di precipitazioni e aggiunge rovesci, con indicazioni concentrate tra pomeriggio e sera e valori citati di 70-90 mm, 115.4 mm, 140.7 mm e 30-40 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro rovesci, con massime fra 16 e 21 °C. I valori più elevati sono attesi in zona Bolzano.",
-    "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Bolzano (100%)."
+    "L’indicazione ufficiale descrive condizioni in prevalenza soleggiate. Nel complesso, le indicazioni zonali descrivono un quadro rovesci, con massime fra 20 e 26 °C. I valori più elevati sono attesi in zona Bolzano.",
+    "Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Val Pusteria (55%)."
   ],
-  "trentino_summary": "L’indicazione ufficiale richiama possibili rovesci o temporali tra mattino e pomeriggio. Nel complesso, le indicazioni zonali descrivono un quadro temporali, con massime fra 16 e 24 °C. I valori più elevati sono attesi in zona Alto Garda. Nelle successive 48 ore cresce la probabilità di precipitazioni in alcune zone. Oggi la probabilità più alta di precipitazione riguarda Trento (100%).",
-  "bolzano_summary": "L’indicazione ufficiale segnala precipitazioni o rovesci soprattutto nel pomeriggio. Nella lettura ponderata, Meteo Rosspach conferma il segnale di precipitazioni e aggiunge rovesci, con indicazioni concentrate tra pomeriggio e sera e valori citati di 70-90 mm, 115.4 mm, 140.7 mm e 30-40 mm; il contributo esperto affina il dettaglio locale senza sostituire il bollettino ufficiale. Nel complesso, le indicazioni zonali descrivono un quadro rovesci, con massime fra 16 e 21 °C. I valori più elevati sono attesi in zona Bolzano. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Bolzano (100%).",
+  "trentino_summary": "L’indicazione ufficiale segnala precipitazioni o rovesci tra mattino e pomeriggio. Nel complesso, le indicazioni zonali descrivono un quadro molto nuvoloso, con massime fra 20 e 25 °C. I valori più elevati sono attesi in zona Trento. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Valsugana (90%).",
+  "bolzano_summary": "L’indicazione ufficiale descrive condizioni in prevalenza soleggiate. Nel complesso, le indicazioni zonali descrivono un quadro rovesci, con massime fra 20 e 26 °C. I valori più elevati sono attesi in zona Bolzano. Nelle successive 48 ore non emerge al momento un peggioramento diffuso. Oggi la probabilità più alta di precipitazione riguarda Val Pusteria (55%).",
   "watch_items": [
     {
-      "label": "Venerdì",
-      "text": "Tempo variabile con precipitazioni localmente possibili; la probabilità più alta riguarda Valsugana (68%). Temperature zonali fra 10 e 26 °C."
+      "label": "Sabato",
+      "text": "Non emerge un fenomeno diffuso dominante. Probabilità massima di precipitazione 38% e temperature zonali fra 7 e 26 °C."
     },
     {
-      "label": "Sabato",
-      "text": "Non emerge un fenomeno diffuso dominante. Probabilità massima di precipitazione 45% e temperature zonali fra 8 e 25 °C."
+      "label": "Domenica",
+      "text": "Non emerge un fenomeno diffuso dominante. Probabilità massima di precipitazione 20% e temperature zonali fra 10 e 26 °C."
     }
   ],
   "zones": [
@@ -54,28 +54,28 @@
       "longitude": 11.1217,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 96,
-          "temp_min": 16,
-          "temp_max": 22,
-          "precipitation_probability": 100,
-          "wind_gust": 25
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
-          "temp_min": 17,
-          "temp_max": 26,
-          "precipitation_probability": 40,
-          "wind_gust": 16
+          "weather_code": 3,
+          "temp_min": 15,
+          "temp_max": 25,
+          "precipitation_probability": 50,
+          "wind_gust": 14
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
-          "temp_min": 13,
-          "temp_max": 25,
-          "precipitation_probability": 5,
-          "wind_gust": 17
+          "temp_min": 16,
+          "temp_max": 26,
+          "precipitation_probability": 8,
+          "wind_gust": 10
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 14,
+          "temp_max": 26,
+          "precipitation_probability": 3,
+          "wind_gust": 16
         }
       ]
     },
@@ -86,28 +86,28 @@
       "longitude": 10.8431,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 96,
-          "temp_min": 18,
-          "temp_max": 24,
-          "precipitation_probability": 100,
-          "wind_gust": 27
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
-          "temp_min": 18,
+          "weather_code": 3,
+          "temp_min": 17,
           "temp_max": 25,
-          "precipitation_probability": 48,
-          "wind_gust": 30
+          "precipitation_probability": 60,
+          "wind_gust": 25
         },
         {
           "date": "2026-09-12",
+          "weather_code": 80,
+          "temp_min": 20,
+          "temp_max": 25,
+          "precipitation_probability": 38,
+          "wind_gust": 35
+        },
+        {
+          "date": "2026-09-13",
           "weather_code": 3,
-          "temp_min": 17,
-          "temp_max": 24,
-          "precipitation_probability": 45,
-          "wind_gust": 25
+          "temp_min": 16,
+          "temp_max": 25,
+          "precipitation_probability": 3,
+          "wind_gust": 20
         }
       ]
     },
@@ -118,27 +118,27 @@
       "longitude": 10.7267,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 95,
-          "temp_min": 15,
-          "temp_max": 20,
-          "precipitation_probability": 100,
-          "wind_gust": 14
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
+          "weather_code": 3,
           "temp_min": 13,
-          "temp_max": 23,
-          "precipitation_probability": 48,
-          "wind_gust": 13
+          "temp_max": 22,
+          "precipitation_probability": 60,
+          "wind_gust": 12
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
-          "temp_min": 14,
-          "temp_max": 20,
-          "precipitation_probability": 45,
+          "temp_min": 15,
+          "temp_max": 23,
+          "precipitation_probability": 38,
+          "wind_gust": 12
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 13,
+          "temp_max": 22,
+          "precipitation_probability": 3,
           "wind_gust": 20
         }
       ]
@@ -150,28 +150,28 @@
       "longitude": 11.4561,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 95,
-          "temp_min": 15,
-          "temp_max": 21,
-          "precipitation_probability": 100,
-          "wind_gust": 19
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
-          "temp_min": 15,
+          "weather_code": 45,
+          "temp_min": 14,
           "temp_max": 25,
-          "precipitation_probability": 68,
-          "wind_gust": 17
+          "precipitation_probability": 90,
+          "wind_gust": 12
         },
         {
           "date": "2026-09-12",
           "weather_code": 2,
-          "temp_min": 15,
-          "temp_max": 24,
+          "temp_min": 16,
+          "temp_max": 26,
           "precipitation_probability": 5,
           "wind_gust": 14
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 15,
+          "temp_max": 25,
+          "precipitation_probability": 5,
+          "wind_gust": 17
         }
       ]
     },
@@ -182,28 +182,28 @@
       "longitude": 11.0351,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 80,
-          "temp_min": 14,
-          "temp_max": 18,
-          "precipitation_probability": 100,
-          "wind_gust": 13
-        },
-        {
           "date": "2026-09-11",
           "weather_code": 80,
-          "temp_min": 14,
+          "temp_min": 12,
           "temp_max": 22,
           "precipitation_probability": 40,
-          "wind_gust": 16
+          "wind_gust": 14
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
           "temp_min": 11,
-          "temp_max": 21,
-          "precipitation_probability": 0,
-          "wind_gust": 16
+          "temp_max": 22,
+          "precipitation_probability": 3,
+          "wind_gust": 10
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 12,
+          "temp_max": 22,
+          "precipitation_probability": 3,
+          "wind_gust": 13
         }
       ]
     },
@@ -214,28 +214,28 @@
       "longitude": 11.4598,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 96,
-          "temp_min": 11,
-          "temp_max": 16,
-          "precipitation_probability": 100,
-          "wind_gust": 20
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
+          "weather_code": 45,
           "temp_min": 11,
           "temp_max": 20,
-          "precipitation_probability": 58,
-          "wind_gust": 22
+          "precipitation_probability": 80,
+          "wind_gust": 19
         },
         {
           "date": "2026-09-12",
-          "weather_code": 2,
-          "temp_min": 10,
-          "temp_max": 19,
+          "weather_code": 3,
+          "temp_min": 9,
+          "temp_max": 21,
           "precipitation_probability": 0,
-          "wind_gust": 24
+          "wind_gust": 19
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 11,
+          "temp_max": 20,
+          "precipitation_probability": 5,
+          "wind_gust": 27
         }
       ]
     },
@@ -246,28 +246,28 @@
       "longitude": 11.3548,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 80,
-          "temp_min": 16,
-          "temp_max": 21,
-          "precipitation_probability": 100,
-          "wind_gust": 17
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
-          "temp_min": 16,
+          "weather_code": 61,
+          "temp_min": 15,
           "temp_max": 26,
           "precipitation_probability": 50,
           "wind_gust": 23
         },
         {
           "date": "2026-09-12",
-          "weather_code": 2,
+          "weather_code": 3,
           "temp_min": 14,
-          "temp_max": 24,
+          "temp_max": 25,
           "precipitation_probability": 0,
-          "wind_gust": 22
+          "wind_gust": 20
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 15,
+          "temp_max": 26,
+          "precipitation_probability": 3,
+          "wind_gust": 19
         }
       ]
     },
@@ -278,28 +278,28 @@
       "longitude": 11.1594,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 80,
-          "temp_min": 15,
-          "temp_max": 20,
-          "precipitation_probability": 100,
-          "wind_gust": 16
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 80,
-          "temp_min": 16,
+          "weather_code": 3,
+          "temp_min": 15,
           "temp_max": 25,
-          "precipitation_probability": 30,
-          "wind_gust": 16
+          "precipitation_probability": 13,
+          "wind_gust": 15
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
           "temp_min": 14,
-          "temp_max": 23,
+          "temp_max": 25,
           "precipitation_probability": 0,
-          "wind_gust": 22
+          "wind_gust": 10
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 61,
+          "temp_min": 16,
+          "temp_max": 24,
+          "precipitation_probability": 5,
+          "wind_gust": 18
         }
       ]
     },
@@ -310,28 +310,28 @@
       "longitude": 11.9368,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 80,
-          "temp_min": 11,
-          "temp_max": 16,
-          "precipitation_probability": 100,
-          "wind_gust": 13
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 81,
+          "weather_code": 80,
           "temp_min": 10,
           "temp_max": 20,
-          "precipitation_probability": 38,
-          "wind_gust": 18
+          "precipitation_probability": 55,
+          "wind_gust": 20
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
-          "temp_min": 8,
-          "temp_max": 20,
+          "temp_min": 7,
+          "temp_max": 22,
           "precipitation_probability": 0,
-          "wind_gust": 20
+          "wind_gust": 16
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 61,
+          "temp_min": 10,
+          "temp_max": 21,
+          "precipitation_probability": 10,
+          "wind_gust": 14
         }
       ]
     },
@@ -342,28 +342,28 @@
       "longitude": 10.7721,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 80,
-          "temp_min": 12,
-          "temp_max": 17,
-          "precipitation_probability": 100,
-          "wind_gust": 14
-        },
-        {
           "date": "2026-09-11",
-          "weather_code": 81,
-          "temp_min": 12,
+          "weather_code": 45,
+          "temp_min": 10,
           "temp_max": 22,
-          "precipitation_probability": 13,
-          "wind_gust": 28
+          "precipitation_probability": 15,
+          "wind_gust": 34
         },
         {
           "date": "2026-09-12",
           "weather_code": 3,
-          "temp_min": 11,
-          "temp_max": 22,
+          "temp_min": 10,
+          "temp_max": 23,
           "precipitation_probability": 0,
-          "wind_gust": 22
+          "wind_gust": 16
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 61,
+          "temp_min": 13,
+          "temp_max": 23,
+          "precipitation_probability": 20,
+          "wind_gust": 30
         }
       ]
     },
@@ -374,28 +374,28 @@
       "longitude": 11.6575,
       "days": [
         {
-          "date": "2026-09-10",
-          "weather_code": 63,
-          "temp_min": 13,
-          "temp_max": 18,
-          "precipitation_probability": 100,
-          "wind_gust": 18
-        },
-        {
           "date": "2026-09-11",
           "weather_code": 80,
-          "temp_min": 10,
+          "temp_min": 11,
           "temp_max": 22,
-          "precipitation_probability": 43,
-          "wind_gust": 25
+          "precipitation_probability": 48,
+          "wind_gust": 24
         },
         {
           "date": "2026-09-12",
-          "weather_code": 1,
+          "weather_code": 2,
           "temp_min": 10,
-          "temp_max": 22,
+          "temp_max": 23,
           "precipitation_probability": 0,
-          "wind_gust": 14
+          "wind_gust": 11
+        },
+        {
+          "date": "2026-09-13",
+          "weather_code": 3,
+          "temp_min": 13,
+          "temp_max": 24,
+          "precipitation_probability": 8,
+          "wind_gust": 17
         }
       ]
     }
@@ -405,22 +405,22 @@
       "name": "Meteotrentino",
       "url": "https://www.meteotrentino.it/previsioni/bollettino-meteorologico-ufficiale-per-il-trentino/",
       "available": true,
-      "updated_at": "10/09/2026 - 06:31",
+      "updated_at": "11/09/2026 - 06:26",
       "title": "Bollettino meteorologico ufficiale"
     },
     {
       "name": "Servizio meteorologico Provincia di Bolzano",
       "url": "https://meteo.provincia.bz.it/it/",
       "available": true,
-      "updated_at": "Wed, 09 Sep 2026 19:36:56 GMT",
-      "title": "10.09.2026 Ancora instabile"
+      "updated_at": "Fri, 11 Sep 2026 05:17:40 GMT",
+      "title": "11.09.2026 Sole e nubi"
     },
     {
       "name": "Meteo Rosspach",
       "url": "https://t.me/rosspach",
-      "available": true,
-      "updated_at": "2026-09-08T16:10:02+00:00",
-      "title": "Ultimo aggiornamento pubblico"
+      "available": false,
+      "updated_at": "",
+      "title": ""
     },
     {
       "name": "Giacomo Poletti",
@@ -430,6 +430,6 @@
       "title": ""
     }
   ],
-  "map_url": "https://raw.githubusercontent.com/meteo-franz/meteofranz/main/output/map.png?v=20260910",
+  "map_url": "https://raw.githubusercontent.com/meteo-franz/meteofranz/main/output/map.png?v=20260911",
   "official_sources_available": 2
 }
